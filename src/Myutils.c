@@ -1,7 +1,7 @@
-#include "myutils.h"
+#include "Myutils.h"
 int factorial(int m)
 {
-  if (m == 0) // Base case
+  if (m == 0) 
     return 1;
   else
     return (m*factorial(m-1));
