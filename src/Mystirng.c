@@ -1,4 +1,4 @@
-#include "mystring.h"
+#include "Mystring.h"
 size_t mystrlen(const char *str){
     return strlen(str);
 }
@@ -11,3 +11,6 @@ char* mystrcat(char *str1, const char *str2){
 int mystrcmp(const char *str1, const char *str2 ){
     return strcmp(str1,str2);
 }
+
+
+
