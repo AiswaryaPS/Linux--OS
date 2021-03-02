@@ -1,4 +1,4 @@
-#include "bitmask.h"
+#include "Bitmask.h"
 int set(int m, int n) 
 { 
     return (m | (1 << (n - 1))); 
