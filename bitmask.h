@@ -4,3 +4,8 @@ int set(int n, int k);
 int clear(int n, int k);
 int flip(int n, int k);
 #endif
+
+
+
+
+
