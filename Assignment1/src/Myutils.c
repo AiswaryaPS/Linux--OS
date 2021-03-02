@@ -35,3 +35,24 @@ int ispalindrome(int n){
        return 0;  
 
 }
+int vsum(int a, ...) 
+{
+    // define type of variable
+    va_list L;
+    int z;
+
+    z = 0;
+
+    va_start(L, a);
+
+    // Loop to adding the int values
+    for (int i=0; i < a; i++)
+    {
+        z = z + va_arg(L, int);
+    }
+
+    va_end(L);
+
+    return z;
+}
+
