@@ -9,11 +9,11 @@ int factorial(int m)
 
 int isPrime(int b)
 {
-   int a;
+   int c;
  
-   for ( a = 2 ; a <= c - 1 ; c++ )
+   for ( c = 2 ; c <= b - 1 ; c++ )
    { 
-      if ( c%c == 0 )
+      if ( b%c == 0 )
      return 0;
    }
    return 1;
