@@ -1,15 +1,11 @@
 #include <iostream> 
 #include <pthread.h> 
-  
-// size of array 
 #define MAX 16 
-  
-// maximum number of threads 
 #define MAX_THREAD 4 
   
 using namespace std; 
   
-int a[] = { 1, 5, 7, 10, 12, 14, 15, 18, 20, 22, 25, 27, 30, 64, 110, 220 }; 
+int b[] = { 15, 1, 5, 7, 12, 14,18, 20, 24, 25, 30, 37, 64, 100,210 }; 
 int sum[4] = { 0 }; 
 int part = 0; 
   
@@ -21,9 +17,7 @@ void* sum_array(void* arg)
   
     for (int i = thread_part * (MAX / 4); i < (thread_part + 1) * (MAX / 4); i++) 
         sum[thread_part] += a[i]; 
-} 
-  
-// Driver Code 
+}  
 int main() 
 { 
   
@@ -31,7 +25,7 @@ int main()
   
     // Creating 4 threads 
     for (int i = 0; i < MAX_THREAD; i++) 
-        pthread_create(&threads[i], NULL, sum_array, (void*)NULL); 
+        pthread_create(&threads[i], NULL, Sum_Array, (void*)NULL); 
   
     // joining 4 threads i.e. waiting for all 4 threads to complete 
     for (int i = 0; i < MAX_THREAD; i++) 
@@ -42,7 +36,7 @@ int main()
     for (int i = 0; i < MAX_THREAD; i++) 
         total_sum += sum[i]; 
   
-    cout << "sum is " << total_sum << endl; 
+    cout << "sum " << total_sum << endl; 
   
     return 0; 
 } 
