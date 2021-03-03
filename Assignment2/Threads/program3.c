@@ -1,4 +1,4 @@
-#include  <sys/types.h>
+/*#include  <sys/types.h>
    #include  <sys/timers.h>
    #include  <pthread.h>
    #include  <stdlib.h>
@@ -54,7 +54,7 @@
      float r;          /* random number in interval 0.0 .. 1.0 */
 
      while (1)
-     {
+     /*{
          getTime(&tspec, s->buffer, TIMLEN);
          rand_r(&(s->seed), &(s->val));
          r = (s->val)/((float)RAND_MAX); 
@@ -62,10 +62,10 @@
          printf("Thread %d with shrd = %d sleeps %f at time %s\n", s->who,
 	        shrd, TMIN+(r*(TMAX-TMIN)), s->buffer);
          /* sleep for an a time between TMIN and TMAX */
-         interval.tv_sec = TMIN + (int)(r*(TMAX-TMIN));
+        /* interval.tv_sec = TMIN + (int)(r*(TMAX-TMIN));
          interval.tv_nsec = (int)(r*1000000000);
          pthread_delay_np(&interval);
          getTime(&tspec, s->buffer, TIMLEN);
          printf("Thread %d with shrd = %d after sleep at time %s\n", 
 		s->who, shrd, s->buffer);}
-   }
+   } */
