@@ -11,11 +11,11 @@
 
    int shrd;
    struct state {
-     pthread_t t;          /* A thread */
-     int who;              /* It identifies a thread */
-     int seed;             /* The seed used for random number generator*/
-     int val;              /* Value returned by random number generator */
-     char buffer[TIMLEN];  /* String represnting current time */
+     pthread_t t;          
+     int who;              
+     int seed;             
+     int val;              
+     char buffer[TIMLEN];  
    } states[THREADSCOUNT];
 
    void moo(struct state *s);
@@ -49,14 +49,12 @@
    }
 
    void moo(struct state *s) {
-     /* We assume that a thread sleeps in each loop, from a minimum of */
-     /* TMIN to a maximum of TMAX, at random.                          */
-
      struct timespec tspec;
      struct timespec interval;
      float r;          /* random number in interval 0.0 .. 1.0 */
 
-     while (1){
+     while (1)
+     {
          getTime(&tspec, s->buffer, TIMLEN);
          rand_r(&(s->seed), &(s->val));
          r = (s->val)/((float)RAND_MAX); 
