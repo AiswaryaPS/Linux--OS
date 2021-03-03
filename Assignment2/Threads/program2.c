@@ -1,17 +1,11 @@
-// C++ code to find maximum of an array using Multithreading 
+
 #include <pthread.h> 
 #include <stdio.h> 
 #include <stdlib.h> 
-  
-// Size of array 
 #define max 16 
-  
-// Max number of thread 
 #define Th_max 4 
-  
-// Array 
-int a[max] = { 1, 5, 7, 10, 12, 14, 15, 18, 20, 
-               22, 25, 27, 300, 64, 110, 220 }; 
+int a[max] = { 1, 4, 7, 9, 11, 14, 16, 18, 19, 
+               22, 24, 25, 340, 60, 100, 200 }; 
   
 // Array to store max of threads 
 int max_num[Th_max] = { 0 }; 
@@ -29,9 +23,7 @@ void maximum(void* arg)
     } 
   
     max_num[num] = maxs; 
-} 
-  
-// Driver code 
+}  
 int main() 
 { 
     int maxs = 0; 
