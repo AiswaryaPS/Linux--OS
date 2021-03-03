@@ -7,7 +7,7 @@ int main()
     char filename[100], b; 
     printf("Enter the filename to open for reading \n"); 
     scanf("%s", filename); 
-   /* fptr1 = fopen(filename, "r"); 
+    fptr1 = fopen(filename, "r"); 
     if (fptr1 == NULL) 
     { 
         printf("Cannot open file %s \n", filename); 
@@ -22,7 +22,7 @@ int main()
     { 
         printf("Cannot open file %s \n", filename); 
         exit(0); 
-    }*/  
+    } 
     b = fgetc(fptr1); 
     while (b != EOF) 
     { 
