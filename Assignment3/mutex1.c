@@ -2,13 +2,8 @@
 #include <semaphore.h>
 #include <stdlib.h>
 #include <stdio.h>
-
-/*
-This program provides a possible solution for producer-consumer problem using mutex and semaphore.
-*/
-
-#define MaxItems 5 // Maximum items a producer can produce or a consumer can consume
-#define BufferSize 5 // Size of the buffer
+#define MaxItems  
+#define BufferSize 5
 
 int in = 0;
 int out = 0;
@@ -20,7 +15,7 @@ void *producer(void *pno)
 {   
     if(in==BufferSize-1)
     {
-        printf("Producer Stack is full \n");
+        printf("producer stack is full \n");
     }
     else
     {
@@ -39,7 +34,7 @@ void *consumer(void *cno)
 {   
     if(out==BufferSize-1)
     {
-        printf("Consumer Stack is full\n");
+        printf("consumer stack is full\n");
     }
     else
     {
