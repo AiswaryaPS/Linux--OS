@@ -32,7 +32,9 @@ bool cpyfile()
 
 	flag = write(fdd1,buf,no);
 
-	//close
+
+	
+	
 	close(fdd);
 	close(fdd1);
 
