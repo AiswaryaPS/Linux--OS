@@ -11,4 +11,4 @@ run:
 
 clean:
 	rm -rf *.out *.o
-© 2021 GitHub, Inc.
+
