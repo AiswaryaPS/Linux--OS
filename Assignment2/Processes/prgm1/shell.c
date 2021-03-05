@@ -26,7 +26,7 @@ void MiniShell() {
     if (!fgets(line, lengt, stdin))
       break;
 
-    size_t length = strlen(line);
+    size_t  length = strlen(line);
 
     if (line [length - 1] == '\n')
       line[length - 1] = '\0';
