@@ -4,8 +4,8 @@
 #include <stdio.h>
 #define MaxItems 5 
 #define BufferSize 5 
-sem_t empty;
-sem_t full;
+sem_h empty;
+sem_h full;
 int in = 0;
 int out = 0;
 int item=0;
@@ -20,11 +20,12 @@ void *producer(void *pno)
     else
     {
      for(int i = 0; i < MaxItems; i++) {
-        item = rand(); // Produce a random item
+        item = rand();
+         // Produce a random item
         sem_wait(&empty);
         /* put value item into the buffer */
         buffer[in] = item;
-        printf("Producer %d: Insert Item %d at %d\n", *((int *)pno),buffer[in],in);
+        printf("producer %d: insert item %d at %d\n", *((int *)pno),buffer[in],in);
         in = (in + 1) % BufferSize;     
         sem_post(&full);
      }
@@ -59,17 +60,21 @@ int main()
 
     int a[5] = {1,2,3,4,5}; //Just used for numbering the producer and consumer
 
-    for(int i = 0; i < 5; i++) {
+    for(int i = 0; i < 5; i++)
+    {
         pthread_create(&pro[i], NULL, (void *)producer, (void *)&a[i]);
     }
-    for(int i = 0; i < 5; i++) {
+    for(int i = 0; i < 5; i++)
+    {
         pthread_create(&con[i], NULL, (void *)consumer, (void *)&a[i]);
     }
 
-    for(int i = 0; i < 5; i++) {
+    for(int i = 0; i < 5; i++)
+    {
         pthread_join(pro[i], NULL);
     }
-    for(int i = 0; i < 5; i++) {
+    for(int i = 0; i < 5; i++)
+    {
         pthread_join(con[i], NULL);
     }
 
