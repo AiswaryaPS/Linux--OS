@@ -7,8 +7,8 @@
 #define BufferSize 5 
 =======
 #include <stdio.h> 
-#define MaxItems 5 // Maximum items a producer can produce or a consumer can consume
-#define BufferSize 5 // Size of the buffer
+#define MaxItems 5 
+#define BufferSize 5 
 
 >>>>>>> d6113b7510ab59b9872b6084d2a3a91ab3e1a92f:Assignment3/mutex_circular.c
 int in = 0;
@@ -20,14 +20,15 @@ void *producer(void *pno)
 {   
     int item;
     for(int i = 0; i < MaxItems; i++) {
-        item = rand(); // Produce a random item
+        item = rand();
+        // Produce a random item
         pthread_mutex_lock(&mutex);
         /* wait for space in buffer */
         while (((in + 1) % BufferSize) == out)
         {
-        /* put value item into the buffer */
+        /* put value to the buffer */
            buffer[in] = item;
-           printf("Producer %d: Insert Item %d at %d\n", *((int *)pno),buffer[in],in);
+           printf("producer %d: insert item %d at %d\n", *((int *)pno),buffer[in],in);
            in = (in + 1) % BufferSize;     
         }
         pthread_mutex_unlock(&mutex);
@@ -54,9 +55,11 @@ int main()
 {   
 
     pthread_t pro[5],con[5];
+    
     pthread_mutex_init(&mutex, NULL);
 
-    int a[5] = {1,2,3,4,5}; //Just used for numbering the producer and consumer
+    int a[5] = {1,2,3,4,5};
+    //Just used for numbering the producer and consumer
 
     for(int i = 0; i < 5; i++) {
         pthread_create(&pro[i], NULL, (void *)producer, (void *)&a[i]);
