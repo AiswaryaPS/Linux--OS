@@ -36,6 +36,7 @@ void *consumer(void *cno)
     {
         printf("consumer stack is full\n");
     }
+    
     else
     {
      int item=0;
