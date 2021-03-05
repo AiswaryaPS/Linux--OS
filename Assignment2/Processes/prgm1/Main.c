@@ -3,5 +3,5 @@
 
 int main() 
 { 
-void MiniShell(); 
+void minishell(); 
 }

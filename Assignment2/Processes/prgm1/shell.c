@@ -10,9 +10,7 @@ void MiniShell() {
   char *argv[100];      
 
   // ** set path at bin
-  char *path = "/bin/";
-
-   // ** full file path  
+  char *path = "/bin/";  
   char progpath[20];    
 
    // ** arg count
@@ -28,9 +26,9 @@ void MiniShell() {
     if (!fgets(line, lengt, stdin))
       break;
 
-    size_t length = strlen(line);
+    size_t  length = strlen(line);
 
-    if (line[length - 1] == '\n')
+    if (line [length - 1] == '\n')
       line[length - 1] = '\0';
 
     if (strcmp(line, "exit") == 0) { 
@@ -71,6 +69,7 @@ void MiniShell() {
       
        // ** delete newline
       if (progpath[i] == '\n') {
+        
         progpath[i] = '\0';
       }
     }
@@ -81,13 +80,16 @@ void MiniShell() {
       
       // ** Child
       execvp(progpath, argv);
+      
+      //**
       fprintf(stderr, "Child process could not do execvp\n");
 
     }
     
      else { 
        
-       //** Parent
+       //** parent
+       
       wait(NULL);
       printf("Child exited\n");
     }

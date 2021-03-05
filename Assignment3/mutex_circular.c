@@ -1,10 +1,23 @@
 #include <pthread.h>
 #include <semaphore.h>
 #include <stdlib.h>
+<<<<<<< HEAD
 #include <stdio.h> 
 #define MaxItems 5 
 #define BufferSize 5 
 
+=======
+<<<<<<< HEAD:Assignment3/mutex_stack.c
+#include <stdio.h>
+#define MaxItems 5 
+#define BufferSize 5 
+=======
+#include <stdio.h> 
+#define MaxItems 5 // Maximum items a producer can produce or a consumer can consume
+#define BufferSize 5 // Size of the buffer
+
+>>>>>>> d6113b7510ab59b9872b6084d2a3a91ab3e1a92f:Assignment3/mutex_circular.c
+>>>>>>> d6113b7510ab59b9872b6084d2a3a91ab3e1a92f
 int in = 0;
 int out = 0;
 int buffer[BufferSize];
@@ -50,8 +63,12 @@ int main()
     pthread_t pro[5],con[5];
     pthread_mutex_init(&mutex, NULL);
 
+<<<<<<< HEAD
     int a[5] = {1,2,3,4,5}; 
     //Just used for numbering the producer and consumer
+=======
+    int a[5] = {1,2,3,4,5}; //Just used for numbering the producer and consumer
+>>>>>>> d6113b7510ab59b9872b6084d2a3a91ab3e1a92f
 
     for(int i = 0; i < 5; i++) {
         pthread_create(&pro[i], NULL, (void *)producer, (void *)&a[i]);
