@@ -61,6 +61,7 @@ int main()
 {   
 
     pthread_t pro[5],con[5];
+    //**using mutex method
     pthread_mutex_init(&mutex, NULL);
 
 <<<<<<< HEAD
