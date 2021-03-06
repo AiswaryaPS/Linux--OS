@@ -1,22 +1,22 @@
-all: assignment2Gpipe assignment2Gpipe1 assignment2Gpipe2
+all: pipe1 pipe2 pipe3
 
-assignment2Gpipe: assignment2Gpipe.c sol2g.h
-	gcc -o assignment2Gpipe.out assignment2Gpipe.c -lrt
+pipe1: assignment2Gpipe1.c solution.h
+	gcc -o pipe1.out pipe1.c -lrt
 	
-assignment2Gpipe1: assignment2Gpipe1.c sol2g.h
-	gcc -o assignment2Gpipe1.out assignment2Gpipe1.c -lrt
+pipe2: pipe2.c solution.h
+	gcc -o pipe2.out pipe2.c -lrt
 
-assignment2Gpipe2: assignment2Gpipe2.c sol2g.h
-	gcc -o assignment2Gpipe2.out assignment2Gpipe2.c -lrt
+pipe3: pipe3.c solution.h
+	gcc -o pipe3.out pipe3.c -lrt
 	
-runassignment2Gpipe:
-	./assignment2Gpipe.
+runpipe1:
+	.pipe1.
 
-runassignment2Gpipe1:
-	./assignment2Gpipe1.out
+runpipe2:
+	.pipe2.out
 
-runassignment2Gpipe2:
-	./assignment2Gpipe2.out
+runpipe3:
+	.pipe3.out
 
 clean:
 	rm -rf *.out *.o
