@@ -1,9 +1,9 @@
-all: solutionsend sol4receive
+all: solutionsend solutionreceive
 
-sol4send: solutionsend.c 
+solutionsend: solutionsend.c 
 	gcc -o solutionsend.out solutionsend.c -lrt
 	
-sol4receive: solutionreceive.c 
+solutionreceive: solutionreceive.c 
 	gcc -o solutionreceive.out solutionreceive.c -lrt
 	
 runsolutionreceive:
