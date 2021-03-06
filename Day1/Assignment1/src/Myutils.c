@@ -35,7 +35,7 @@ int ispalindrome(int n){
        return 0;  
 
 }
-/*int vsum(int d, ...) 
+int vsum(int d, ...) 
 {
    
     va_list L;
@@ -54,5 +54,5 @@ int ispalindrome(int n){
     va_end(L);
 
     return x;
-}//
+}
 
