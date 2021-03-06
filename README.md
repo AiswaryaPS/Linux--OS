@@ -41,3 +41,12 @@ Step-3 : Dynamic Libraries
     Analyse all intermediate, final outcome as per the discussion in session
 
 Hints
+
+    vsum - a function which take variable no.of arguments
+    use va_list, va_arg, va_start,va_end from stdarg.h for the implementation
+
+    vsum(2,10,20); 
+    vsum(3,10,12,18);
+    vsum(4,10,12,18,20);
+
+
