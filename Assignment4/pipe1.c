@@ -1,16 +1,16 @@
-#include"sol2g.h"
+#include"solution.h"
 void main() 
 {
-    int a1;
-    a1 = mkfifo("pipeA",0666);
+    int b1;
+    b1 = mkfifo("pipeD",0666);
     if(a1<0)
-        printf("\npipeA was not created");
+        printf("\npipeD was not created");
     else
-        printf("\npipeA created");
-    int a2;
-    a2 = mkfifo("pipeB",0666);
-    if(a2<0)
-        printf("\npipeB was not created");
+        printf("\npipeD created");
+    int b2;
+    b2 = mkfifo("pipeE",0666);
+    if(b2<0)
+        printf("\npipeE was not created");
     else
-        printf("\npipeB is created\n");
+        printf("\npipeE is created\n");
 }
