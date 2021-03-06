@@ -12,14 +12,16 @@ int main()
 	struct mq_attr attr;
 	attr.mq_msgsize=256;
 	attr.mq_maxmsg=20;
+	//openining
 	mqid=mq_open("/mque",O_WRONLY|O_CREAT,0666,&attr);
 	if(mqid<0)
 	{
 		perror("mq_open");
 		exit(1);
 	}
-	char str[]="Hello Message queue";
+	char str[]="Hello Message ";
 	int ln=strlen(str);
+	//send
 	ret=mq_send(mqid,str,ln+1,5);
 	if(ret<0)
 	{
@@ -38,6 +40,7 @@ int main()
 	}
 	char buf[8192];
 	int maxlength=256,prio;
+	//receiving command
 	int nbytes=mq_receive(mqid2,buf,maxlength,&prio);
 	if(nbytes<0)
 	{
@@ -46,6 +49,7 @@ int main()
 	}
 	buf[nbytes]='\0';
 	printf("receive msg from receiver :%s,nbytes=%d,prio=%d\n",buf,nbytes,prio);
+	//closing
 	mq_close(mqid);
 	mq_close(mqid2);
 	return 0;
